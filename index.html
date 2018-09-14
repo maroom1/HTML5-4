@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Page</title>
+    <style>
+         nav a {
+            padding: 3px 25px;
+            list-style: none;
+            background: gray;
+        }
+    #mycanvas {
+     border:1px solid #666;
+}
+    
+    </style>
+    
+</body>
+</html>      
+</head>
+<body>
+        <div style="text-align: center; margin: 10px 0;">
+                <nav>
+                    <a href="index.html">Rectangle</a> |
+                    <a href="Circle.html">Circle</a> |
+                    <a href="Triangle.html">Triangle</a> |
+                    <a href="Text.html">Text</a> |
+                    <a href="Image.html">Image</a> |
+                    <a href="Animation.html">Animation</a>
+                </nav>
+            </div>
+    <canvas id="mycanvas" width="600" height="400"></canvas> 
+    <script>   
+        var cnv = document.getElementById('mycanvas');
+        var ctx = cnv.getContext('2d');
+        ctx.strokeStyle = 'blue';     
+        ctx.lineWidth = '10';
+        ctx.strokeRect(100, 60, 300, 200);
+        ctx.fillStyle = 'yellow';     
+        ctx.fillRect(100, 60, 300, 200);
+   </script>
+</body>
+</html>

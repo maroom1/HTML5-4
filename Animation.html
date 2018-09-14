@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Page</title>
+    <style>
+         nav a {
+            padding: 3px 25px;
+            list-style: none;
+            background: gray;
+        }
+    #mycanvas {
+     border:1px solid #666;
+}
+    
+    </style>
+    
+</body>
+</html>      
+</head>
+<body>
+        <div style="text-align: center; margin: 10px 0;">
+                <nav>
+                    <a href="index.html">Rectangle</a> |
+                    <a href="Circle.html">Circle</a> |
+                    <a href="Triangle.html">Triangle</a> |
+                    <a href="Text.html">Text</a> |
+                    <a href="Image.html">Image</a> |
+                    <a href="Animation.html">Animation</a>
+                </nav>
+            </div>
+    <canvas id="mycanvas" width="600" height="400"></canvas> 
+    <script>   
+        var cnv = document.getElementById('mycanvas');
+        var ctx = cnv.getContext('2d');
+          
+        x = 200; 
+      y = 200;     
+      change = 4;  
+      otherchange = 3;
+      w = 600;
+     h = 400; function animate() {
+            ctx.fillStyle = 'lightgray';
+            ctx.strokeRect(0, 0, w, h);
+            ctx.fillStyle = 'blue';
+            ctx.beginPath();
+            ctx.arc(x,y,20,0,Math.PI*2,true);
+            ctx.fill();
+
+            if (x>=w||x<=0) { 
+                 change = -change  
+                                    
+           }
+
+            x = x + change; 
+
+      
+      if(y>=h||y<=0) {
+     otherchange = -otherchange;   
+     }
+    y = y + otherchange;
+   }
+
+       setInterval(animate, 10);
+               
+   </script>
+</body>
+</html>
